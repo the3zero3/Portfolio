@@ -1,0 +1,214 @@
+/***** GENERAL STYLING *****/
+
+/* Body */
+body {
+    margin: 0%;
+}
+
+/* Styles the header1 elements */
+h1 {
+    text-transform: uppercase;
+    font-family: 'Trebuchet MS', Optima;
+    text-align: center;
+    margin-top: 3%; /* Adds a small margin above h1 elements */
+    color: #1a1a1a;
+}
+
+/* Styles the portfolio title text a different color */
+.white-text {
+    color: #f2f2f2;
+}
+
+/* Styles the paragraph elements */
+p {
+    font-family: Perpetua, Rockwell Extra Bold;
+    text-align: justify;
+    letter-spacing: 1px; /* Expands the text slightly */
+    font-size: 20px;
+    padding-left: 20px; /* Adds padding to the left and right of the paragraph element */
+    padding-right: 20px;
+}
+
+/* Centers all elements containing the class "center" */
+.center {
+    text-align: center;
+}
+
+/* Styles the anchor elements */
+a {
+    color: blue;
+}
+
+/* Styles the quotation elements */
+q {
+    font-style: italic;
+    font-size: 30px;
+}
+
+/* Styles the image elements */
+img {
+    filter: grayscale(75%);
+    border-radius: 8px;
+    max-width: 100%; /* Ensures all images stay within the width of their container */
+    height: 340px;
+    display: block; /* Ensures the images are able to be centered */
+    margin-left: auto; /* Centers all images in combination with "margin-right: auto" */
+    margin-right: auto;
+}
+
+/* Styles the image hover effects */
+img:hover {
+    filter: grayscale(5%);
+    transition: transform 1s;
+    transform: scale(1.1);
+}
+
+/* Styles the footer element */
+footer {
+    padding: 2%; /* Gives the footer padding that is equal to 2% of the width of the element's area */
+    background-color: #f2f2f2;
+}
+
+/***** NAVBAR STYLING *****/
+
+/* Styles the navbar and positions it at the top of the page */
+.navbar {
+    overflow: hidden;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Styles the navbar anchor links */
+.navbar a {
+    float: left;
+    display: block; /* Ensures that other text will be displayed on the same line or row, instead of a new line */
+    color: #f2f2f2;
+    padding: 14px 16px;
+    text-decoration: none; /* Gets rid of the underlines under the text on the navbar */
+    font-family: Avant Garde, Helvetica;
+    font-size: 20px;
+    text-align: center;
+}
+
+/* Styles the navbar hover effect */
+.navbar a:hover {
+    background-color: #f2f2f2;
+    color: black;
+    font-weight: bold;
+}
+
+/* Styles the navbar home button */
+.navbar a.active {
+    background-color: #4d4d4d;
+}
+
+/***** VIDEO STYLING *****/
+
+/* Styles the background video */
+#background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    padding-bottom: 70%; /* Gives padding to the video so the correct part of it is displayed behind the text */
+    min-width: 100%; /* Ensures the video is displayed across the full width of the page */
+    z-index: -1;
+}
+
+/* Styles the text over the video */
+.video-text {
+    background: rgba(0, 0, 0, 0.5);
+    color: #f2f2f2;
+    width: 100%;
+    padding: 20px;
+}
+
+/***** TABLE STYLING *****/
+
+/* The asterisk is a universal selector that applies this effect to all elements on the page */
+* {
+    box-sizing: border-box;
+}
+
+.column-1 {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    padding-top: 3%;
+    height: 400px;
+    background-color: #d9d9d9;
+}
+
+.column-2 {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    padding-top: 1.9%;
+    height: 400px;
+    background-color: #4d4d4d;
+}
+
+/* This class is applied to the columns in the final row, overriding the height and padding to provide more room for the contact form while keeping the rest of the formatting from column-1 or column-2 */
+.column-tall {
+    padding-top: 3.5%;
+    height: 450px;
+}
+
+/* Inserts something after the content of selected elements (in this case the elements with class "row") */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/***** CONTACT FORM STYLING *****/
+
+/* Styles the text input sections of the contact form */
+input[type=text] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    font-family: Perpetua, Rockwell Extra Bold;
+}
+
+/* Styles the hover effect for text input sections of the contact form */
+input[type=text]:hover {
+    box-shadow: 0 0 5px #00004d inset;
+}
+
+/* Styles the submit button of the contact form */
+input[type=submit] {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Perpetua, Rockwell Extra Bold;
+}
+
+/* Styles the hover effect for the submit button of the contact form */
+input[type=submit]:hover {
+    background-color: white;
+    color: black;
+    transition: transform 1.5s;
+}
+
+/* Styles the form element */
+form {
+    border-radius: 5px;
+    background-color: #d9d9d9;
+    padding: 10px;
+    font-family: 'Trebuchet MS', Optima;
+}
