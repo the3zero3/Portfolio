@@ -5,18 +5,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chris Dini's Portfolio</title>
+    <link rel="shortcut icon" href="images/coding_icon.png">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/style-media.css">
 </head>
 
-<body>
+<body class="background">
 
     <!-- Navbar -->
     <div class="navbar">
         <a class="active" href="#home">Home</a>
+        <a href="#slideshow">Slideshow</a>
         <a href="#about">About</a>
         <a href="#github">GitHub</a>
-        <a href="#contact">Contact</a>
+        <!-- Onclick and ondblclick functions added to open and close the contact form -->
+        <a onclick="openForm()" ondblclick="closeForm()" class="contact">Contact</a>
     </div>
 
     <!-- Background video -->
@@ -43,6 +45,60 @@
                 <br> Thank you for stopping by and enjoy your visit!
             </p>
         </strong>
+    </div>
+
+    <!-- Slideshow section added -->
+    <div id="slideshow">
+        <div id="slideshow-background">
+            <div id="slideshow-container">
+                <!-- Slide 1 of 6 -->
+                <div class="mySlides fade">
+                    <img class="slideshow-images" src="images/fry.jpg" alt="Picture of Chris Dini">
+                    <div class="text">I'm available to assist you on your project!</div>
+                </div>
+                <!-- Slide 2 of 6 -->
+                <div class="mySlides fade">
+                    <img class="slideshow-images" src="images/HTML_CSS_and_JavaScript.jpeg"
+                        alt="HTML, CSS, and JS logos">
+                    <div class="text">I am a full-stack software developer,<br> trained in:<br>HTML, CSS, JavaScript,
+                    </div>
+                </div>
+                <!-- Slide 3 of 6 -->
+                <div class="mySlides fade">
+                    <img class="slideshow-images" src="images/Python.png" alt="Python logo">
+                    <div class="text">the popular programming language Python,</div>
+                </div>
+                <!-- Slide 4 of 6 -->
+                <div class="mySlides fade">
+                    <img class="slideshow-images" src="images/C_Sharp_and_Dot_NET.png" alt="C# logo">
+                    <div class="text">C#, .NET Framework, ASP.NET, MVC, </div>
+                </div>
+                <!-- Slide 5 of 6 -->
+                <div class="mySlides fade">
+                    <img class="slideshow-images" src="images/SQL_and_Database.jpg" alt="SQL logo">
+                    <div class="text">back end development, databases and SQL.</div>
+                </div>
+                <!-- Slide 6 of 6 -->
+                <div class="mySlides fade">
+                    <img class="slideshow-images" src="images/contact-square.png" alt="Contact me!">
+                    <div class="text"><a class="white-text contact" onclick="openForm()">Contact me now!</a></div>
+                </div>
+                <!-- Previous and Next buttons -->
+                <a class="previous" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br> <!-- Adds a space between the slideshow images and the dots -->
+
+            <!--Slideshow dots (these are another way for users to navigate through the slideshow) -->
+            <div style="text-align: center;">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+            </div>
+        </div>
     </div>
 
     <!-- About section -->
@@ -87,35 +143,33 @@
     </div>
 
     <!-- Contact section -->
-    <div class="row" id="contact">
-        <!-- Contact image, left column -->
-        <div class="column-2 column-tall">
-            <img src="images/contact.png" alt="contact-image">
-        </div>
-        <!-- Contact form, right column -->
-        <div class="column-1 column-tall">
-            <h1>Contact</h1>
-            <!-- This specifies where and how to send the form data -->
-            <form action="https://formspree.io/f/mdkokrbz" method="POST">
-                <label>Name:</label>
-                <input type="text" placeholder="Place enter your name here">
-                <label>Email:</label>
-                <input type="text" id="email" name="email" placeholder="Place enter your email here">
-                <label>Message:</label>
-                <input type="text" id="message" name="message" placeholder="Place write your message here">
-                <input type="submit" value="SUBMIT">
+    <div id="Contact">
+        <button onclick="openForm()" class="pop-up-button">CONTACT</button>
+        <div class="form-popup" id="myForm">
+            <form action="https://formspree.io/the3zero3@gmail.com" method="POST" class="form-container">
+                <!-- Here we are using a free online service from https://formspree.io/ to send our contact form to an email address of our choosing - note: it will not run unless live on the internet, you have to push it to your online website first -->
+                <h1>Contact</h1>
+                <label for="name"><b>Name</b></label>
+                <input type="text" placeholder="Type your name here" name="name" required>
+                <label for="phone"><b>Phone</b></label>
+                <input type="text" placeholder="Type your phone number here" name="phone">
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Type your email address here" name="email" required>
+                <label for="message"><b>Message</b></label>
+                <input type="text" placeholder="Type your message here" name="message">
+
+                <button type="submit" class="btn">SUBMIT</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
             </form>
         </div>
     </div>
 
     <!-- Footer section -->
     <footer>
-        <p>
         <p class="center">&copy; <a href="https://www.cmwebwerks.com/" target="_blank">CM Webwerks,</a> a divison of The
-            CMD Group</p>
-        <br>
-        </p>
+            CMD Group</p><br>
     </footer>
+    <script src="js/portfolio.js"></script>
 </body>
 
 </html>
