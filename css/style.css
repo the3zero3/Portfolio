@@ -87,9 +87,9 @@ img {
     filter: grayscale(75%); /* This rids the pictures of 75% of their color */
     border-radius: 8px; /* Gives all images slightly rounded corners */
     max-width: 100%; /* Ensures all images stay within the width of their container */
-    height: 100%; /* Ensures all images stay within the height of their container */
+    max-height: 100%; /* Ensures all images stay within the height of their container */
     display: block; /* Ensures the images are able to be centered */
-    margin-left: auto auto auto auto; /* This centers all images */
+    margin: auto auto auto auto; /* This centers all images */
 }
 
 /* Styles the image hover effects */
@@ -524,7 +524,6 @@ button:hover, .form-container .btn:hover {
         height: 550px;
     }
 }
-
 
 /* Media rule to remove margin-top from h1 elements for extra large screens (so that the paragraph text fits in the column */
 @media screen and (min-width: 2000px) {
