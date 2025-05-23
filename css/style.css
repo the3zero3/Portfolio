@@ -12,7 +12,6 @@ body {
     transition: 3s opacity; /*This causes a 3-second fade-in */
     letter-spacing: .2vw; /* vw is a relative measurement, 1vw is equal to 1% of the viewport width */
     font-family: Avant Garde, Helvetica;
-    font-size: 1.5vw;
     overflow-x: hidden; /* This prevents the horizontal scroll bar from appearing when the quote is hovered over */
     user-select: none; /* This prevents the text on the webpage from being highlighted by the user */
 }
@@ -25,6 +24,7 @@ body.fade-out {
 h1 {
     text-transform: uppercase; /* Capitalizes all h1 headings */
     font-family: 'Trebuchet MS', Optima; /* Sets the font family of all h1 headings */
+    font-size: clamp(2rem, 5vw, 3.5rem); /* This sets the relative font sizing to ~32px to 56px using clamp() */
     text-align: center; /* Centers all h1 elements */
     margin-top: 3%; /* Adds a small margin above h1 elements */
     color: #1a1a1a;
@@ -40,7 +40,7 @@ h1:hover {
 /* Styles the portfolio title text a different color */
 .white-text {
     color: #f2f2f2; /* This is used to change the color of the Portfolio Title text */
-    padding-top: 10vh; /* Adds padding (equal to 10% of the viewport height) to the top of the Portfolio Title text */
+    padding-top: 1vh; /* Adds padding (equal to 10% of the viewport height) to the top of the Portfolio Title text */
 }
 
 /* Styles the paragraph elements */
@@ -48,7 +48,7 @@ p {
     font-family: Perpetua, Rockwell Extra Bold;
     text-align: justify; /* This justifies the text within paragraph elements */
     letter-spacing: .1vw; /* This expands the text slightly */
-    font-size: 2.5vw; /* This sets the relative font sizing equal to 2.5% of the viewport width */
+    font-size: clamp(1.125rem, 2vw, 1.5rem); /* This sets the relative font sizing to ~18px to 24px using clamp() */
     padding-left: 1vw; /* Adds padding on the left equal to 1% of the viewport width */
     padding-right: 1vw; /* Adds padding on the right equal to 1% of the viewport width */
 }
@@ -115,8 +115,8 @@ footer {
     top: 0; /* This ensures no space is displayed above the navbar */
     width: 100%; /* This makes the navbar span the entire width of the page */
     z-index: 1; /* This ensures other elements don't display over the navbar */
-    -webkit-animation: moveNav 5s; /* Safari 4.0 - 8.0 */
-    animation: moveNav 5s; /* This makes the moveNav animation last 5 seconds */
+    -webkit-animation: moveNav 0s; /* Safari 4.0 - 8.0 */
+    animation: moveNav 0s; /* This makes the moveNav animation last 5 seconds */
 }
 
 /* Styles the animation effect for moving the navbar in from above the left of the screen on page load */
@@ -133,18 +133,20 @@ footer {
     padding: .75vw 1vw; /* This adds padding around our text */
     text-decoration: none; /* Gets rid of the underlines under the text on the navbar */
     font-family: Avant Garde, Helvetica; /* This specifies the font family for text on our navbar */
-    font-size: 1.5vw; /* This specifies the font size for text on our navbar */
+    font-size: clamp(1.125rem, 2vw, 1.5rem); /* This sets the relative font sizing to ~18px to 24px using clamp() */
     text-align: center; /* This centers the text within its container */
     position: relative; /* This sets the text relative to its normal positioning, allowing us to use the animation below */
-    -webkit-animation: moveNavText 5.75s; /* Animation for Safari 4.0 - 8.0 */
-    animation: moveNavText 5.75s; /* Applies the moveNavText animation for 5.75s */
+    -webkit-animation: moveNavText 0.75s; /* Animation for Safari 4.0 - 8.0 */
+    animation: moveNavText 0.75s; /* Applies the moveNavText animation for 5.75s */
 }
+
 
 /* The animation effect for moving the nav bar links in from above the top of the screen on page load */
 @keyframes moveNavText {
     from {top: -100vw;} /* This sets the navbar text 100% above the viewport */
     to {top: 0vw;} /* This lowers the navbar text onto the navbar */
 }
+
 
 /* Styles the navbar hover effect */
 .navbar a:hover {
@@ -168,8 +170,7 @@ footer {
 #background-video {
     position: fixed; /* This fixes the video to the page */
     right: 0; /* This ensures there is no space between the edge of the video and the edge of the page */
-    bottom: 0; /* This ensures no space between the edge of the video and the bottom of the page */
-    padding-bottom: 70%; /* Gives padding to the video so the correct part of it is displayed behind the text */
+    top: 0; /* This ensures no space between the edge of the video and the bottom of the page */
     min-width: 100%; /* Ensures the video is displayed across the full width of the page */
     z-index: -1;
 }
@@ -180,9 +181,10 @@ footer {
     color: #f2f2f2; /* Makes the font color white-ish */
     width: 100%; /* Ensures the video-text container fills the width of the video */
     padding-top: 2vh; /* This adds padding around the video-text container so that the background goes slightly beyond the text */
+    padding-bottom: 2vh;
     position: relative; /* This sets the text relative to its normal positioning, allowing us to use the animation below */
-    -webkit-animation: moveVideoText 5.75s; /* Animation for Safari 4.0 - 8.0 */
-    animation: moveVideoText 5.75s; /* moveVideoText animation set to 5.75s to match the movenavText animation */
+    -webkit-animation: moveVideoText 0.75s; /* Animation for Safari 4.0 - 8.0 */
+    animation: moveVideoText 0.75s; /* moveVideoText animation set to 5.75s to match the movenavText animation */
 }
 
 /* This animation effect causes the overlay video text to move up from the bottom of the page upon page load */
@@ -207,7 +209,7 @@ footer {
 #slideshow-container {
     width: 39.5vw; /* Relative sizing of the container for the slidewshow set to 39.5% of the viewport width */
     height: auto; /* The height of the container is automatically adjusted based on the content it is displaying */
-    padding-top: 4%; /* Adds a small padding to the top of the slideshow container */
+    padding-top: 2%; /* Adds a small padding to the top of the slideshow container */
     position: relative; /* This sets the container relative to its normal positioning */
     margin:auto; /* This will horizontally center the container on the page */
 }
@@ -262,7 +264,7 @@ footer {
     text-align: center; /* The text is center-aligned within the image */
     font-family: Perpetua, Rockwell Extra Bold;
     letter-spacing: .1vw; /* This gives slight spacing between the letters */
-    font-size: 1.5vw; /* Font size is relative to the size of the viewport width */
+    font-size: clamp(1.125rem, 2vw, 1.5rem); /* This sets the relative font sizing to ~18px to 24px using clamp() */
     background-color: rgba(0, 0, 0, 0.75); /* Gives a slightly transparent black background */
     font-weight: bold;
     border-radius: 0px 0px 7px 7px; /* Gives the text background rounded corners on the bottom left and right corners */
@@ -350,8 +352,8 @@ footer {
     color: black; /* Sets the color of the button text to black */
     border: solid black; /* This makes a solid black border around the button */
     cursor: pointer; /* This changes the cursor to a pointer when hovered over the button */
-    -webkit-animation: movePopup 5s; /* Animation for 5 seconds for Safari 4.0-8.0 */
-    animation: movePopup 5s; /* Animation set for 5 seconds */
+    -webkit-animation: movePopup 0s; /* Animation for 5 seconds for Safari 4.0-8.0 */
+    animation: movePopup 0s; /* Animation set for 5 seconds */
 }
 
 /* movePopup animation moves the button from off the right side of the screen to its fixed location on the viewport */
@@ -440,95 +442,24 @@ button:hover, .form-container .btn:hover {
 
 /***** MEDIA QUERY SECTION *****/
 
-/* Media rules for paragraph font size for different screen sizes */
-@media screen and (max-width: 527px) {
-    p {
-        font-size: 3.75vw;
-    }
-}
-
-@media screen and (min-width: 528px) and (max-width: 660px) {
-    p {
-        font-size: 3.5vw;
-    }
-}
-
-@media screen and (min-width: 661px) and (max-width: 799px) {
-    p {
-        font-size: 2.75vw;
-    }
-}
-
-@media screen and (min-width: 800px) and (max-width: 924px) {
-    p {
-        font-size: 2.5vw;
-    }
-}
-
-@media screen and (min-width: 925px) and (max-width: 1050px) {
-    p {
-        font-size: 2.25vw;
-    }
-}
-
-@media screen and (min-width: 1051px) and (max-width: 1310px) {
-    p {
-        font-size: 2vw;
-    } 
-}
-
-@media screen and (min-width: 1311px) and (max-width: 1535px) {
-    p {
-        font-size: 1.75vw;
-    }
-}
-
-@media screen and (min-width: 1536px) and (max-width: 2269px) {
-    p {
-        font-size: 1.5vw;
-    }
-}
-
-@media screen and (min-width: 2270px) {
-    p {
-        font-size: 1.35vw;
-    }
-}
-
 /* Media rule for navbar links for different screen sizes */
 /* Screens 1080px and smaller will display navbar links equally distributed */
 @media screen and (max-width: 1080px) {
-    .Navbar a{
+    .navbar a{
         width: 20%; /* This sets each navbar link to 1/5 of the navbar */
-        font-size: 2.5vw;
-    }
-}
-
-/* Media rules to enlarge the font of the white text for smaller screens */
-@media screen and (max-width: 1080px) {
-    .quote{
-        font-size: 3.5vw;
-    }
-
-    .white-text {
-        font-size: 4.5vw;
     }
 }
 
 /* Media rules to increase the size of the columns for larger screens */
 @media screen and (min-width: 1725px) {
-    .Column_1 {
+    .column-1 {
         height: 550px;
     }
-    .Column_2 {
+    .column-2 {
         height: 550px;
     }
-}
-
-/* Media rule to remove margin-top from h1 elements for extra large screens (so that the paragraph text fits in the column */
-@media screen and (min-width: 2000px) {
-    h1{
-        margin-top: 0;
+    #slideshow-container {
+        width: 25vw;
     }
 }
 
