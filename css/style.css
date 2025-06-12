@@ -173,6 +173,7 @@ footer {
     top: 0; /* This ensures no space between the edge of the video and the bottom of the page */
     min-width: 100%; /* Ensures the video is displayed across the full width of the page */
     z-index: -1;
+    padding-top: 2vh;
 }
 
 /* Styles the text over the video */
@@ -329,6 +330,13 @@ footer {
     padding: 1.6%;
     height: 450px;
     background-color: #4d4d4d;
+}
+
+/* Centers the text vertically in the row */
+.center-box {
+    display: flex;
+    height: 100%;
+    align-items: center;
 }
 
 /* Inserts something after the content of selected elements (in this case the elements with class "row") */
